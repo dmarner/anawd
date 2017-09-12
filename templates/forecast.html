@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<ul>
+    <pre class="prettyprint lang-javascript">
+        <code class="lang-javascript">
+            <script type="text/javascript">
+                {% autoescape false %}
+                   document.write(JSON.stringify('{{ json_forecast }}',null," "));
+                {% endautoescape %}
+            </script>
+        </code>
+    </pre>
+</ul>
+</body>
+</html>
