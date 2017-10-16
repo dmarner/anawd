@@ -8,7 +8,11 @@ forecast_files = os.listdir(app.static_folder + "/forecasts/")
 
 @app.route('/')
 def list_forecasts():
-    return render_template('index.html', forecast_files=forecast_files)
+    print("Entered list_forecasts\n")
+    if len(forecast_files) == 0:
+        return "No files found"
+    else:
+        return render_template('index.html', forecast_files=forecast_files)
 
 
 @app.route('/print/<forecast_file_name>')
@@ -18,5 +22,4 @@ def print_json(forecast_file_name):
 
 
 if __name__ == '__main__':
-    app.run()
-dfdfd
+    app.run(host='0.0.0.0')

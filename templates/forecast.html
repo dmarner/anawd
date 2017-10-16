@@ -12,7 +12,7 @@
         <code class="lang-javascript">
             <script type="text/javascript">
                 {% autoescape false %}
-                   document.write(JSON.stringify('{{ json_forecast }}',null," "));
+                   document.write(JSON.stringify(JSON.parse('{{ json_forecast }}'),null,2));
                 {% endautoescape %}
             </script>
         </code>
