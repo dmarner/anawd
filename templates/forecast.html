@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+{% extends "base.html" %}
 
-</head>
-<body>
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
 <ul>
     <pre class="prettyprint lang-javascript">
         <code class="lang-javascript">
@@ -18,5 +14,8 @@
         </code>
     </pre>
 </ul>
-</body>
-</html>
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+{% endblock %}

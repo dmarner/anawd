@@ -1,14 +1,17 @@
 from flask import Flask, render_template
+from flask_bootstrap import Bootstrap
 import os
 
 app = Flask(__name__)
+
+bootstrap = Bootstrap(app)
 
 forecast_files = os.listdir(app.static_folder + "/forecasts/")
 
 
 @app.route('/')
 def list_forecasts():
-    print("Entered list_forecasts\n")
+    print("Entered list_forecasts!\n")
     if len(forecast_files) == 0:
         return "No files found"
     else:
